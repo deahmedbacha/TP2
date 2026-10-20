@@ -25,7 +25,7 @@ Ce projet implémente un module de transfert bancaire robuste et sécurisé, met
 
 ---
 
-##  Scénarios de tests & Captures d'écran
+## Scénarios de tests & Captures d'écran
 
 ### 1. Transfert valide (Succès)
 > Transfert de 500 € depuis un solde de 2000 € vers un compte crédité à 500 €. Débit et crédit effectués avec succès.
@@ -69,12 +69,23 @@ Ce projet implémente un module de transfert bancaire robuste et sécurisé, met
 
 ---
 
-##  Compilation et Exécution
+### 7. Échec après débit et avant crédit (Compensation & Rollback)
+> Simulation d'une défaillance inattendue pendant l'opération `credit()` (via `TestCompensation.java`).
+> Le mécanisme de compensation (`catch (RuntimeException e) { source.credit(amount); throw e; }`) rétablit automatiquement le solde source à 2000.0 € afin de préserver l'intégrité du compte.
+
+![Test 7 - Échec et compensation](screenshots/07_failure_and_compensation.png)
+
+---
+
+## 🚀 Compilation et Exécution
 
 ```bash
 # Compilation de toutes les classes
 javac *.java
 
-# Lancement du programme principal
+# Lancement du programme interactif principal
 java Main
+
+# Exécution du test de compensation (Scénario 7)
+java TestCompensation
 ```

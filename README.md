@@ -69,7 +69,7 @@ Ce projet implémente un module de transfert bancaire robuste et sécurisé, met
 
 ---
 
-## 🚀 Compilation et Exécution
+##  Compilation et Exécution
 
 ```bash
 # Compilation de toutes les classes

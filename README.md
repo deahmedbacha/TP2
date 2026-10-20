@@ -55,7 +55,21 @@ Ce projet implémente un module de transfert bancaire robuste et sécurisé, met
 
 ---
 
-## Compilation et Exécution
+### 5. Comptes source et destination identiques (`InvalidAccountException`)
+> Tentative de transfert de 100 € en choisissant le même compte (`ABD01`) en source et destination.
+
+![Test 5 - Comptes identiques](screenshots/05_same_account_rejection.png)
+
+---
+
+### 6. Saisie utilisateur non numérique (`InputMismatchException`)
+> L'utilisateur entre une chaîne ("ABC") au lieu d'un nombre : l'erreur est interceptée et gérée proprement sans interruption brutale du programme.
+
+![Test 6 - Saisie invalide](screenshots/06_invalid_input_mismatch.png)
+
+---
+
+## 🚀 Compilation et Exécution
 
 ```bash
 # Compilation de toutes les classes
